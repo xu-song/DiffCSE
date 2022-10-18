@@ -5,8 +5,8 @@ import torch.distributed as dist
 
 import transformers
 from transformers import RobertaTokenizer
-from transformers.models.roberta.modeling_roberta import RobertaPreTrainedModel, RobertaModel, RobertaLMHead
-from transformers.models.bert.modeling_bert import BertPreTrainedModel, BertModel, BertLMPredictionHead
+from modeling_roberta import RobertaPreTrainedModel, RobertaModel, RobertaLMHead
+from modeling_bert import BertPreTrainedModel, BertModel, BertLMPredictionHead
 from transformers.activations import gelu
 from transformers.file_utils import (
     add_code_sample_docstrings,
