@@ -174,9 +174,7 @@ def cl_forward(cls,
     # (same as BERT's original implementation) over the representation.
     if not cls.model_args.before_mlp:
         if cls.pooler_type == "cls":
-            pooler_output = pooler_output.view((batch_size*num_sent, pooler_output.size(-1))) # (bs, num_sent, hidden)
             pooler_output = cls.mlp(pooler_output)
-            pooler_output = pooler_output.view((batch_size, num_sent, pooler_output.size(-1))) # (bs, num_sent, hidden)
     # Produce MLM augmentations and perform conditional ELECTRA using the discriminator
     if mlm_input_ids is not None:
         mlm_input_ids = mlm_input_ids.view((-1, mlm_input_ids.size(-1)))
